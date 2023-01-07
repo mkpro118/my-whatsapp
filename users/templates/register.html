@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+    Register - MK's WhatsApp
+{% endblock %}
+
+{% block content %}
+    <section class="register">
+        <legend>
+            <span id="login-tab"><a href="{% url 'login' %}">Login</a></span>
+            <span id="register-tab" onclick="return false"><a href="{% url 'register' %}">Register</a></span>
+        </legend>
+        <label for="username">
+            Username
+            <small class="username-error">
+                This username is not available
+            </small>
+        </label>
+            <input required type="text" id="username" placeholder="Pick a username..." data-errorfield="username-error">
+        <label for="email">
+            Email
+            <small class="email-error">
+                Invalid Email
+            </small>
+        </label>
+            <input required type="email" id="email" placeholder="Your email..." data-errorfield="email-error">
+        <label for="password">
+            Password
+            <small class="password-error" id="password-strength">
+
+            </small>
+        </label>
+        <div class="password">
+            <input required type="password" id="password" placeholder="Your password..." data-errorfield="password-error">
+            <span class="show-password-btn">
+                <svg width="100%" height="100%" viewBox="0 0 100 100">
+                    <line x1="31%" y1="31%" x2="69%" y2="69%" style="stroke:hsl(0, 0%, 0%);stroke-width:5%;"
+                </svg>
+            </span>
+            <span id="password-btn-overlay" data-field="password">
+            </span>
+        </div>
+        <label for="password-repeat">
+            Password <small style="display: inline-block;font-size: 0.9rem;">(Re-enter)</small>
+            <small id="password-match" class="password-error">
+                Passwords don't match
+            </small>
+        </label>
+        <div class="password">
+            <input required type="password" id="password-repeat" placeholder="Your password again..." data-errorfield="password-error">
+            <span class="show-password-btn">
+                <svg width="100%" height="100%" viewBox="0 0 100 100">
+                    <line x1="31%" y1="31%" x2="69%" y2="69%" style="stroke:hsl(0, 0%, 0%);stroke-width:5%;"
+                </svg>
+            </span>
+            <span id="password-repeat-btn-overlay" data-field="password-repeat">
+            </span>
+        </div>
+    </section>
+    <span id="register-btn" href="" class="btn">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Register
+    </span>
+    <script type="text/javascript" src="{% static 'password-btn.js' %}" defer></script>
+    <script type="text/javascript" src="{% static 'password-strength-test.js' %}" defer></script>
+    <script type="text/javascript" src="{% static 'password-match.js' %}" defer></script>
+    <script type="text/javascript" src="{% static 'register-btn.js' %}" defer></script>
+    <script type="text/javascript" src="{% static 'check-username-availability.js' %}" defer></script>
+    <script type="text/javascript" src="{% static 'validate-email.js' %}" defer></script>
+{% endblock %}

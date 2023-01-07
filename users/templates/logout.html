@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+    Logout - MK's WhatsApp
+{% endblock %}
+
+{% block content %}
+    <span id="logout">
+        <style type="text/css">
+            #logout{
+                font-size: 3rem;
+                background: hsl(15, 70%, 55%);
+                padding:0.6rem 1rem;
+                color: hsl(0, 0%, 10%);
+            }
+        </style>
+        We're sorry to see you go 🙁
+    </span>
+
+    <a id="login-again" href="{% url 'login' %}">
+        <style type="text/css">
+            #login-again{
+                font-size: 1.5rem;
+                text-decoration:none;
+                padding:0.4rem 0.7rem;
+                border:2px solid hsl(240, 90%, 60%);
+                margin-top:10px;
+                color:hsl(240, 90%, 60%);
+            }
+
+            #login-again:hover{
+                color: hsl(0, 0%, 10%);
+                background: hsl(240, 90%, 60%);
+            }
+        </style>
+        Login again</a>
+{% endblock %}
